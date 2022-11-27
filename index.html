@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        input {
+            text-align: end !important;
+        }
+    </style>
+</head>
+
+<body style="background: rgba(109, 149, 185, 0.62);">
+    <div class="container">
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png"
+            alt="" width="50" style="position: absolute;top:0;left:0;margin: 10px 0 0 10px;"> -->
+        <h1>Show Room</h1>
+        <div class="d-flex justify-content-between">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="freight_charge" class="col-form-label fs-4 fw-bold">Freight Charge</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="freight_charge" style="width: 150px;" class="form-control"
+                        aria-describedby="passwordHelpInline" autofocus value="">
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success rounded-pill" onclick="add_tr()">+</button>
+            </div>
+        </div>
+        <table class="table table-hover table-strip">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>&nbsp;</th>
+                    <th>Rate</th>
+                    <th>&nbsp;</th>
+                    <th>Total MRP</th>
+                    <th>Charge/Box</th>
+                    <th>Cost/Qty</th>
+                    <th>Cost/Product</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+                <tr>
+                    <td>Product 1</td>
+                    <td><input class="form-control" style="width: 100px;" type="text" name="qty[]"
+                            onkeyup="sum_total_mrp()" value=""></td>
+                    <td>x</td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="rate[]"
+                            onkeyup="sum_total_mrp()" value=""></td>
+                    <td>=</td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="total_mrp[]"
+                            onkeyup="get_grand_total_mrp()" value="">
+                    </td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="charge[]" value=""></td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="total_cost[]" value="">
+                    </td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="cost_product[]" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product 2</td>
+                    <td><input class="form-control" style="width: 100px;" type="text" name="qty[]"
+                            onkeyup="sum_total_mrp()" value=""></td>
+                    <td>x</td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="rate[]"
+                            onkeyup="sum_total_mrp()" value=""></td>
+                    <td>=</td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="total_mrp[]"
+                            onkeyup="get_grand_total_mrp()" value="">
+                    </td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="charge[]" value=""></td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="total_cost[]" value="">
+                    </td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="cost_product[]" value="">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Total Amount :</td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="grand_total_mrp"
+                            id="grand_total_mrp" value="">
+                    <td colspan="2">&nbsp;</td>
+                    <td><input class="form-control" style="width: 150px;" type="text" name="sum_cost_product"
+                            id="sum_cost_product" value=""></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div style="float: right;bottom:0;right:0;margin: 0 30px 30px 0;position: absolute;">Developed By Shyam Sarkar</div>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="./custom.js"></script>
+</body>
+
+</html>
